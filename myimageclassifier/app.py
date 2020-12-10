@@ -9,6 +9,10 @@ import urllib.request
 app = Flask(__name__) # create the Flask app
 CORS(app) # allow requests from other domains
 
+@app.route('/', methods=['GET'])
+def hello_world():
+    return("Hello World! The Python App is running.")
+
 @app.route('/img-url', methods=['POST'])
 def img_url():
     url = request.get_json()
